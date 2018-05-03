@@ -1,0 +1,31 @@
+#homepage.container
+	h1 Demo search
+	= form_for '', url: '/', method: :get, :class => "form-horizontal" do |f|
+		.row
+			label.col-sm-2.control-label Language
+			.col-sm-10
+				= f.select :language_id, options_for_select(@languages.collect {|pt| [ pt.code, pt.id ] }, params[:language_id]), {include_blank: true}, {class: ' form-control' }  
+		.row
+			label.col-sm-2.control-label Programming language
+			.col-sm-10
+				= f.select :programming_language_id, options_for_select(@programms.collect {|pt| [ pt.name, pt.id ] }, params[:programming_language_id]), {include_blank: true}, {class: ' form-control' }  
+		= f.submit "Search", :class => "btn btn-primary pull-right join-button"
+		br
+		br
+		br
+		h2 List developer
+		- if @developers.present?
+			table.table.table-striped.table-bordered.table-hover
+				thead
+					tr
+					th Email
+					th Programming_languages
+					th Languages
+				tbody
+					- @developers.each do | developer |
+						tr
+							td = developer.email
+							td = developer.programming_languages.pluck(:name).join(', ')
+							td = developer.languages.pluck(:code).join(', ')
+
+
