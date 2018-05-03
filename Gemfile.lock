@@ -24,6 +24,9 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    active_model_serializers (0.9.7)
+      activemodel (>= 3.2)
+      concurrent-ruby (~> 1.0)
     activejob (5.1.6)
       activesupport (= 5.1.6)
       globalid (>= 0.3.6)
@@ -225,6 +228,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers (~> 0.9.4)
   brakeman
   bundler-audit
   byebug
@@ -244,7 +248,6 @@ DEPENDENCIES
   rails (~> 5.1.5)
   rspec-rails
   sass-rails (~> 5.0)
-  slim
   slim-rails
   spring
   spring-watcher-listen (~> 2.0.0)

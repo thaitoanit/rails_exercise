@@ -1,0 +1,19 @@
+h1 Listing api_v1_developers
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @api_v1_developers.each do |api_v1_developer|
+      tr
+        td = link_to 'Show', api_v1_developer
+        td = link_to 'Edit', edit_api_v1_developer_path(api_v1_developer)
+        td = link_to 'Destroy', api_v1_developer, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Developer', new_api_v1_developer_path

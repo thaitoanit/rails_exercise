@@ -39,6 +39,9 @@ end
 # Add slim
 gem 'slim-rails'
 
+# return json data
+gem 'active_model_serializers', '~>0.9.4'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
