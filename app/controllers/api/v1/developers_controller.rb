@@ -8,6 +8,7 @@ class Api::V1::DevelopersController < ApplicationController
 
   # GET /api/v1/developers/1
   def show
+    @developer = Developer.includes(:languages, :programming_languages).where(id: params[:id]).first
     render json: @developer, serializer: DeveloperSerializer, status: 200
   end
 
